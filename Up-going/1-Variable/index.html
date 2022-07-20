@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable 1</title>
+  </head>
+  <body>
+    <script src="./index.js"></script>
+    <script>
+      // <!-- Logical Operation -->
+      var johnAge = 45;
+      var markAge = 35;
+
+      // 1. john or mark young/old
+      if (johnAge > markAge) {
+        console.log("John is elder");
+        console.log("Mark is younger");
+      }
+
+      // both age are equal or not
+      if (johnAge === markAge) {
+        console.log("Ages are equal");
+      } else {
+        console.log("Ages are not equal");
+      }
+
+      // new Var
+      let vikramAge = johnAge;
+
+      // Check if john is equal to or greater then mark.
+      if (johnAge >= markAge) {
+        console.log("john is equal to or greater then mark.");
+      }
+
+      // john is less then or equal to mark.
+      if (johnAge <= markAge) {
+        console.log("john is less then or equal to mark.");
+      } else {
+        console.log("john is not less then or equal to mark.");
+      }
+      // average age of john and mark.
+      let nahata = johnAge + markAge / 2;
+      console.log(nahata);
+
+      // user height and Mass
+      let johnMass = 70;
+      let markMass = 80;
+      let johnHeight = 6;
+      let markHeight = 7;
+
+      // john and mark Bmis.
+      let MarkBmis = markMass / (johnHeight * markHeight);
+      console.log(MarkBmis);
+
+      let johnBmis = johnMass / (johnHeight * markHeight);
+      console.log(johnBmis);
+
+      // higher Bmis john / mark.
+      let bmisCompare = prompt("Wheather Mark has a heigher BMI than john");
+      if (MarkBmis > johnBmis) {
+        console.log("Mark Bmi is heigher than john");
+      } else {
+        console.log("John Bmis is heigher than mike");
+      }
+    </script>
+  </body>
+</html>

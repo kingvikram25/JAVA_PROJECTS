@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable 2</title>
+  </head>
+  <body>
+    <script>
+      let firstName = "john";
+      let status = "single";
+      if (status == "single") {
+        console.log("john is single");
+      } else {
+        console.log("john is married;");
+      }
+
+      let firstNum = Number(prompt("First Num Pls?"));
+      let secondNum = Number(prompt("Second Num Pls?"));
+      let operation = prompt("anyone from add or sub or mul or divi");
+      console.log(firstNum, secondNum, operation);
+      if (!firstNum || !secondNum || !operation) {
+        console.log(null);
+      } else {
+        let numToreturn;
+        let firstNumType = typeof firstNum === "number" ? true : false;
+        let secondNumType = typeof secondNum === "number" ? true : false;
+
+        // firstNum secondNum valid values (typeof Num)
+        if (firstNumType === true && secondNumType === true) {
+          // checking if operation is a valid one
+
+          // let validOperator = ["add", "sub", "mul", "divi"];
+          if (
+            operation === "add" ||
+            operation === "sub" ||
+            operation === "mul" ||
+            operation === "divi"
+          ) {
+            // operation = add, sub, mul, divi
+            if (operation === "add") {
+              numToreturn = firstNum + secondNum;
+              console.log(numToreturn);
+            } else if (operation === "sub") {
+              numToreturn = firstNum - secondNum;
+              console.log(numToreturn);
+            } else if (operation === "mul") {
+              numToreturn = firstNum * secondNum;
+              console.log(numToreturn);
+            } else if (operation === "divi") {
+              numToreturn = firstNum / secondNum;
+              console.log(numToreturn);
+            } else {
+              alert("Something went wrong");
+            }
+          } else {
+            alert("Enter a valid operator");
+          }
+        } else {
+          alert("Enter a valid typeOf(Number) Val for both numbers.");
+        }
+      }
+
+      //Write a JavaScript program that accept two integers and display the larger
+
+      let userActive = prompt(" integers to display");
+      let userCurrent = prompt(" integers to display");
+      userActive > userCurrent
+        ? console.log(`${userActive} is greater`)
+        : console.log(`${userCurrent} is greater`);
+
+      //Write a JavaScript conditional statement to find the sign of product of three numbers. Display an alert box with the specified sign.
+
+      let mult = 3 * 2 * -3;
+      if (mult >= 0) {
+        console.log("plus");
+      } else {
+        console.log("minus");
+      }
+    </script>
+  </body>
+</html>

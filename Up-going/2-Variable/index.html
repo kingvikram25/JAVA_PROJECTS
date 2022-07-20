@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable 2</title>
+  </head>
+  <body>
+    <script>
+      typeof "Joe"; //string
+      typeof 4; //number
+      typeof NaN; //number
+      typeof false; //boolean
+      typeof [4, 3, 2, 1]; //object
+      typeof { name: "Joe", age: 45 }; //object
+      typeof function () {}; //function
+      typeof phone; //undefined
+      typeof null; //object
+
+      // Convert num into string
+
+      var num = 45; // 45
+      String(num); // "45"
+      String(321); // "321"
+      String(300 + 23); // "323"
+      String(false); // "false"
+      String(true); // "true"
+      false.toString(); // false
+      true.toString(); //true
+      Number("3.18"); // 3.18
+      Number(" "); // 0
+      Number(""); // 0
+      Number("22 44"); // NaN
+      Number(false); // 0
+      Number(true); // 1
+    </script>
+  </body>
+</html>
