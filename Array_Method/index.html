@@ -1,0 +1,482 @@
+<script>
+  // Arrays to work on
+  var numbers = [1, 12, 4, 18, 9, 7, 11, 3, 101, 5, 6];
+  var strings = ["this", "is", "a", "collection", "of", "words"];
+
+  // Use the above two arrays and practice array methods
+
+  // Find largest number in numbers
+
+  let largeNum = Math.max(...numbers);
+
+  // Find longest string in strings
+
+  const longest = [...strings].sort((a, b) => b.length - a.length)[0];
+
+  // other way with reducer
+
+  const longer = [...strings].reduce((a, b) => (a.length > b.length ? a : b));
+
+  // Find all the even numbers
+
+  const evenNum = numbers.filter((num) => {
+    return num % 2 === 0;
+  });
+
+  // Find all the odd numbers
+
+  const oddNum = numbers.filter((num) => {
+    return num % 2 !== 0;
+  });
+
+  // Find all the words that contain 'is' use string method 'includes'
+
+  strings.map((num) => {
+    console.log(num.includes("is"));
+  });
+
+  // Find all the words that contain 'is' use string method 'indexOf'
+
+  strings.map((num) => {
+    console.log(num.indexOf("is"));
+  });
+
+  // Check if all the numbers in numbers array are divisible by three use array method (every)
+
+  let divisibleBy3 = numbers.every((num) => num % 3 === 0);
+
+  //  Sort Array from smallest to largest
+
+  let smallToLarge = numbers.sort(function (a, b) {
+    return a - b;
+  }); // or arrow function
+
+  //   let smallToLarge = numbers.sort((a, b) =>
+  //     a - b;
+  //   });
+
+  // Remove the last word in strings
+  let removeLastWord = strings.pop();
+
+  // Add a new word in the array
+
+  let addNewWordEnd = strings.push("poop");
+
+  // Remove the first word in the array
+
+  let removeFirstWord = strings.shift();
+
+  // Place a new word at the start of the array use (upshift)
+
+  let addNewWordStart = strings.unshift("loop");
+
+  // Make a subset of numbers array [18,9,7,11]
+
+  const subset = [18, 9, 7, 11].map((x) => [x]);
+
+  // Make a subset of strings array ['a','collection']
+
+  const stringSubset = strings.map((x) => x.split(" "));
+
+  // Replace 12 & 18 with 1221 and 1881
+
+  //   const replaceNum = numbers.map((num, index) => {
+  //     if (num === 12) {
+  //       numbers[index] = 1221;
+  //     }
+  //     if (num === 18) {
+  //       numbers[index] = 1881;
+  //     }
+  //   });
+
+  let changeNum = numbers.map((num, index) => {
+    if (num === 12) {
+      numbers.splice(index, 1, 1121);
+    }
+    if (num === 18) {
+      numbers.splice(index, 1, 1881);
+    }
+  });
+
+  // Replace words with string in strings array
+  let forEachMethod = strings.forEach((element, index) => {
+    if (element === "poop") {
+      strings.splice(index, 1, "string");
+    }
+  });
+
+  // Customers Array
+  var customers = [
+    { firstname: "Joe", lastname: "Blogs" },
+    { firstname: "John", lastname: "Smith" },
+    { firstname: "Dave", lastname: "Jones" },
+    { firstname: "Jack", lastname: "White" },
+  ];
+  // Find all customers whose firstname starts with 'J' & Create new array with firstname and lastname.
+
+  //   let customersWithJ = [];
+  //   customers.map((indCus) => {
+  //     let cus = indCus;
+  //     let cusFName = cus.firstname;
+
+  //     if (cusFName.startsWith("J")) {  // stratwith method
+  //       customersWithJ.push(cus);
+  //     }
+  //   });
+
+  let customersWithJ = [];
+  customers.map((indCus) => {
+    let cus = indCus;
+    let cusFName = cus.firstname;
+
+    if (cusFName.split("")[0] === "J") {
+      //split method
+      customersWithJ.push(cus);
+    }
+  });
+
+  // Sort the array created above alphabetically
+
+  let sortAlphanumaric = customers.sort((a, b) => {
+    let cusNameA = a.firstname.toUpperCase();
+    let cusNameB = b.firstname.toUpperCase();
+
+    if (cusNameA > cusNameB) {
+      return 1;
+    }
+    if (cusNameA < cusNameB) {
+      return -1;
+    }
+    return 0;
+  });
+
+  var words = [
+    "mystery",
+    "brother",
+    "aviator",
+    "crocodile",
+    "crockmera",
+    "crocktera",
+    "pearl",
+    "orchard",
+    "crackpot",
+  ];
+  //Write a function findLongestWord that takes an array of words and returns the longest one.
+  //If there are 2 with the same length, it should return the first occurrence.
+
+  const newLongestWord = words.reduce((a, b) => {
+    if (a.length > b.length) {
+      return a;
+    }
+    if (a.length < b.length) {
+      return b;
+    }
+    if (a.length === b.length) {
+      return a;
+    }
+  });
+
+  var numbers1 = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+  // Create a sumArray function that takes an array of numbers1 as a parameter, and calculate the sum of all its numbers
+
+  // for loop method
+
+  //   function sumArray(a) {
+  //     let sum = 0;
+  //     for (let i = 0; i < a.length; i++) {
+  //       sum = sum + a[i];
+  //     }
+  //     return sum;
+  //   }
+
+  // array loop
+
+  function sumArray(a) {
+    let sum = 0;
+    for (let num of numbers1) {
+      sum += num;
+    }
+    return sum;
+  }
+
+  let subTotal = sumArray(numbers1);
+
+  // forEach method
+
+  function sumArray1(a) {
+    let sum = 0;
+    a.forEach((items) => {
+      sum += items;
+    });
+    return sum;
+  }
+  let subTotal1 = sumArray1(numbers1);
+
+  // Use reduce method of array
+
+  function reducer(previousValue, currentValue, index) {
+    const reduce = previousValue + currentValue;
+    return reduce;
+  }
+
+  let reduceSumTotal = numbers1.reduce(reducer);
+
+  // Use the above sum and calculate the average.
+
+  //   const average = reduceSumTotal / numbers1.length;
+
+  let average = numbers1.reduce((a, b) => a + b, 0) / numbers1.length; // reduce method
+
+  // forEach method for find Average
+  let addSome = 0;
+  numbers1.forEach((items) => {
+    addSome += items;
+  });
+  let average1 = addSome / numbers1.length;
+
+  var numbers2 = [2, 6, 9, 10, 7, 4, 1, 9];
+  //Write a function averageNumbers that receives an array of numbers2 and calculate the average of the numbers
+
+  //   function averageNumbers(num) {
+  //     let sum = 0;
+  //     num.forEach((test) => {
+  //       sum += test;
+  //     });
+  //     return sum;
+  //   }
+  //   let subTotalNum = averageNumbers(numbers2);
+  //   let averageNum = subTotalNum / numbers2.length;
+  // this is forEach method
+
+  // now reduce method simple and sweet
+
+  let averageFromReduce = numbers2.reduce((a, b) => a + b, 0) / numbers2.length;
+
+  var words2 = [
+    "seat",
+    "correspond",
+    "linen",
+    "motif",
+    "hole",
+    "smell",
+    "smart",
+    "chaos",
+    "fuel",
+    "palace",
+  ];
+  //Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
+
+  let arrLen = words2.length;
+  let sumOfLen = 0;
+  words2.map((e, i) => {
+    sumOfLen += e.length;
+  });
+  let avg = sumOfLen / arrLen;
+  console.log(avg);
+
+  // new Exercise
+
+  var words = [
+    "crab",
+    "poison",
+    "contagious",
+    "simple",
+    "bring",
+    "sharp",
+    "playground",
+    "poison",
+    "communion",
+    "simple",
+    "bring",
+  ];
+
+  // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array.
+  // (indexOf)
+
+  const noDuplicateValue = words.reduce((previousValue, currentValue) => {
+    if (previousValue.indexOf(currentValue) === -1) {
+      previousValue.push(currentValue);
+    }
+    return previousValue;
+  }, []);
+  console.log(noDuplicateValue);
+
+  var words2 = [
+    "machine",
+    "subset",
+    "trouble",
+    "starting",
+    "matter",
+    "eating",
+    "truth",
+    "disobedience",
+  ];
+
+  // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
+
+  function doesWordExist(arr, str) {
+    if (arr.indexOf(str) > 0) {
+      //  if (arr.includes(str))
+      return true;
+    } else {
+      return false;
+    }
+
+    // let d = arr.indexOf(str) > 0 ? true : false;
+    // return d;
+  }
+
+  var words3 = [
+    "machine",
+    "matter",
+    "subset",
+    "trouble",
+    "starting",
+    "matter",
+    "eating",
+    "matter",
+    "truth",
+    "disobedience",
+    "matter",
+  ];
+
+  // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
+
+  function howManyTimes(element, array) {
+    return element.filter((value) => value === array).length;
+  }
+
+  function howTimes(element, array) {
+    let count = 0;
+    element.forEach((value) => value === array && count++);
+    return count;
+  }
+
+  // Using the reduce() method, how would you sum up the population of every country except China?
+  let data = [
+    {
+      country: "China",
+      pop: 14,
+    },
+    {
+      country: "India",
+      pop: 13,
+    },
+    {
+      country: "USA",
+      pop: 32,
+    },
+    {
+      country: "Indonesia",
+      pop: 26,
+    },
+  ];
+
+  let sums = 0;
+  let sums2 = 0;
+  let sumUpPopulation = data.reduce((previousValue, currentValue, index) => {
+    sums2 += currentValue.pop;
+    if (index !== 0) {
+      sums += currentValue.pop;
+    }
+  }, 0);
+
+  // Use reduce method and summorize the collection like
+  // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
+  const fruitBasket = [
+    "banana",
+    "cherry",
+    "orange",
+    "apple",
+    "cherry",
+    "orange",
+    "apple",
+    "banana",
+    "cherry",
+    "orange",
+    "fig",
+  ];
+
+  const summorize = fruitBasket.reduce((allFruits, fruits) => {
+    allFruits[fruits] ??= 0;
+    allFruits[fruits]++;
+    return allFruits;
+  }, {});
+
+  // not complete
+
+  var data1 = [
+    {
+      name: "Butters",
+      age: 3,
+      type: "dog",
+    },
+    {
+      name: "Lizzy",
+      age: 6,
+      type: "dog",
+    },
+    {
+      name: "Red",
+      age: 1,
+      type: "cat",
+    },
+    {
+      name: "Joey",
+      age: 3,
+      type: "dog",
+    },
+    {
+      name: "Pochi",
+      age: 3,
+      type: "dog",
+    },
+  ];
+
+  // write a function that will sum all of the dogs ages in dog years using for loop.
+  // 1 human year = 7 dog year
+  // Solution is 105
+
+  // Write the same function using
+  // 1. filter - for filtering the cat or dog
+  // 2. map - to multiply human year to dog year
+  // 3. reduce - to accumulate total age.
+  // Solution 105
+
+  let sumWholeTotal = 0;
+  let sumOnlyDog = 0;
+  let sumDogAge = data1.reduce((previousValue, currentValue, index) => {
+    sumWholeTotal += currentValue.age;
+    if (index !== 2) {
+      sumOnlyDog += currentValue.age;
+    }
+  }, 0);
+
+  // 1. Write a JavaScript program to list the properties and values of a JavaScript object. (Object.keys)
+
+  // 2. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
+  var student = {
+    name: "David Rayy",
+    sclass: "VI",
+    rollno: 12,
+  };
+
+  console.log(student);
+
+  delete student.rollno;
+  console.log(student);
+
+  // 3. Write a function to get the length of an object.
+
+  function objSize(MyObj) {
+    let sizeObj = 0;
+    for (let key in MyObj) {
+      if (MyObj.hasOwnProperty(key)) {
+        sizeObj++;
+      }
+    }
+    return sizeObj;
+  }
+  let myObject = objSize(student);
+  console.log(myObject);
+</script>
