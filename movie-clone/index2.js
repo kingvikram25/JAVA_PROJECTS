@@ -3,7 +3,7 @@ const options = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmY2M4MjgxYTVkMzkzYmFmZmU5MWExZjYxOWIwODQ1YSIsInN1YiI6IjY0N2FkODIwY2Y0YjhiMDBjM2QxZmQ1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fPht9NB4oT7niXg8_u4Ih0Nty0AILZNga2NbrL9YUY11",
+      "Bearer <token>",
   },
 };
 
